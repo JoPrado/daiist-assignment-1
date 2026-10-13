@@ -164,11 +164,21 @@
 0.000001 for both PyTorch versions. Largest prediction difference on the test
 set is 0.0008 bikes (manual) and 0.0027 bikes (standard).
 
-**[TO WRITE: Do the three agree, and why? What do the baselines tell you?]**
+Yes, the three models agree. This happens because they minimise the same
+objective: even though they use different methods, they all converge to the
+same values. The baseline serves as a comparison between only using the
+`hour` feature and including all of the other weather and context features
+in a model.
 
 ## Limitations & next steps
 
-**[TO WRITE: real limitations found, and how to address each one.]**
+- RMSE (368) is much larger than MAE (242), so a minority of hours carry
+  large errors; these are mostly during peak hours. One way to fix this
+  would be...
+- The error histogram has a longer tail on the negative side, meaning big
+  under-predictions. One way to solve this...
+- This is exactly the problem identified in the business framing, showing
+  that there is clearly room for improvement in BiciMAD's bike planning.
 
 ## Generative AI use disclosure
 
@@ -181,9 +191,8 @@ set is 0.0008 bikes (manual) and 0.0027 bikes (standard).
   choice of weather features (from the EDA heatmap), and the season and
   holiday encodings are my own decisions.
 - Some design options were proposed by the assistant, and I reviewed and
-  adopted them: splitting randomly by whole days rather than by hours, the
-  weekend flag, a second sin/cos pair and the weekend × hour interactions,
-  the `log(1 + count)` target, standardisation, the Autumn reference
-  category, and the second baseline. The rationale for each is written
-  above, and I can explain each one.
+  adopted them: splitting randomly by whole days rather than by hours, a
+  second sin/cos pair and the weekend × hour interactions, the
+  `log(1 + count)` target, and the second baseline. The rationale for each
+  is written above, and I can explain each one.
 - The interpretation of the results and the limitations are my own.
