@@ -166,17 +166,18 @@ set is 0.0008 bikes (manual) and 0.0027 bikes (standard).
 
 Yes, the three models agree. This happens because they minimise the same
 objective: even though they use different methods, they all converge to the
-same values. The baseline serves as a comparison between only using the
-`hour` feature and including all of the other weather and context features
-in a model.
+same values. The baseline serves as a comparison: it does not use any
+features, while the models include all of the weather and context
+features.
 
 ## Limitations & next steps
 
 - RMSE (368) is much larger than MAE (242), so a minority of hours carry
   large errors; these are mostly during peak hours. One way to fix this
-  would be...
+  would be to add a more flexible hour encoding.
 - The error histogram has a longer tail on the negative side, meaning big
-  under-predictions. One way to solve this...
+  under-predictions. One way to solve this would be to penalise
+  under-predictions more.
 - This is exactly the problem identified in the business framing, showing
   that there is clearly room for improvement in BiciMAD's bike planning.
 
@@ -193,6 +194,6 @@ in a model.
 - Some design options were proposed by the assistant, and I reviewed and
   adopted them: splitting randomly by whole days rather than by hours, a
   second sin/cos pair and the weekend × hour interactions, the
-  `log(1 + count)` target, and the second baseline. The rationale for each
-  is written above, and I can explain each one.
+  `log(1 + count)` target, standardisation, and the second baseline.
+  The rationale for each is written above, and I can explain each one.
 - The interpretation of the results and the limitations are my own.
