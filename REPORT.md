@@ -1,9 +1,9 @@
 # Assignment 1 Report
 
-- **Name**:
-- **Student ID**:
-- **Email**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A | BDBA 3A]
+- **Name**: João Paulo Prado
+- **Student ID**: 19398
+- **Email**: jtobar.ieu2022@student.ie.edu
+- **Group**: BBADBA 5A
 
 ## Dataset
 
